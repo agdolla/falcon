@@ -1,11 +1,13 @@
 import React from 'react';
 
-const TableRow = (props) => (
-  <tr>
-    <td>{props.input}</td>
-    <td>{props.time}</td>
-    <td>{props.date}</td>
-  </tr>
-);
+// Creates a tableRow containing all data passed to it
+const TableRow = (props: { entries: Array<string> }) => {
+  const entries = props.entries.map((value) => <td key={value}>{value}</td>);
+  return (
+    <tr>
+      {entries}
+    </tr>
+  );
+};
 
 export default TableRow;

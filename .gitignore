@@ -45,3 +45,10 @@ main.js.map
 
 .idea
 npm-debug.log.*
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
