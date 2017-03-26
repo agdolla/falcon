@@ -1,0 +1,36 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+th {
+  background-color: #dddddd;
+  color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+    color: black;
+}
+
+tr:nth-child(odd) {
+    background-color: gray;
+    color: white;
+}
+
+form{
+  margin-top: .5em;
+}
+
+button{
+  margin-left: .5em;
+}
