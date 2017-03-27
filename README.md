@@ -11,7 +11,7 @@ The cross-platform database client
   - [ ] Delete records
 	
 * Release 2.0.0
-  * Add support for mysql, mongo, postgres, maria, cassandra
+  - [ ] Add support for mysql, mongo, postgres, maria, cassandra
 
 ## Setup
 ```
