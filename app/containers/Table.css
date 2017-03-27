@@ -6,31 +6,28 @@ table {
 }
 
 td{
-    border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid black;
 }
 
-th {
-  background-color: #dddddd;
-  color: black;
-}
-
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #FFFFFF;
     color: black;
 }
 
 tr:nth-child(odd) {
-    background-color: gray;
-    color: white;
+    background-color:#F0F0F0;
+    color: black;
 }
 
-form{
-  margin-top: .5em;
+thead td  {
+  background-color: #FFFFFF;
+  color: black;
+  font-weight: bold
 }
 
-button{
-  margin-left: .5em;
+tr:hover {
+   transition: .2s;
+   background-color: #cccccc;
 }

@@ -15,7 +15,7 @@ export default class Table extends Component {
   constructor(props: {}) {
     super(props);
     this.state = {
-      headerData: ['name', 'company', 'location'],
+      headerData: ['Name', 'Company', 'Location'],
       tableData: [{
         name: 'Alex',
         company: 'Joogle',

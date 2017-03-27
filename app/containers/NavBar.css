@@ -1,0 +1,25 @@
+li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+li{
+  float: left;
+}
+
+.navbar{
+  height: 8%;
+  width: 100%;
+  border-bottom: 1px;
+  border-color: #bfbfbf;
+  border-bottom-style: solid;
+  position: fixed!important;
+  background-color: #FFFFFF;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
