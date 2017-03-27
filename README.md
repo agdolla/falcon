@@ -1,5 +1,21 @@
-# Primary TODO
-* In `Table.js`, need a way to give a unique key to a  `<TableRow />` the array.
+falcon-core
+===========
+The cross-database ORM that powers falcon
 
-# Secondary TODO
-* Remove unnecessary files and packages
+## Roadmap
+* Release 1.0.0
+  - [ ] Add support for mysql, mongo, postgres, maria, cassandra
+  - [ ] Read records
+  - [ ] Create records
+  - [ ] Update records
+  - [ ] Delete records
+	
+* Release 2.0.0
+  * Add support for mysql, mongo, postgres, maria, cassandra
+
+## Setup
+```
+git clone https://github.com/falcon-client/falcon.git
+cd falcon
+yarn
+```
