@@ -29,6 +29,7 @@ li{
   text-align: left;
   border: none;
   outline: none;
+  padding: 10px 10px;
 }
 .sidebar .sidebarItem:hover {
   transition: .2s;

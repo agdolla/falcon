@@ -13,18 +13,18 @@ export default class NavBar extends Component {
   constructor(props: {}) {
     super(props);
     this.state = {
-      sections: ['']
+      sections: ['Link1', 'Link2', 'Link3']
     };
   }
 
   render() {
+    const links = this.state.sections.map((section) =>
+      <li key={section}><a href="#">{section}</a></li>);
+
     return (
       <div className={styles.navbar}>
         <ul>
-          <li><a href="default.asp">Home</a></li>
-          <li><a href="news.asp">News</a></li>
-          <li><a href="contact.asp">Contact</a></li>
-          <li><a href="about.asp">About</a></li>
+          {links}
         </ul>
       </div>
     );
