@@ -1,6 +1,6 @@
 falcon-core
 ===========
-The cross-database ORM that powers falcon
+The cross-platform database client
 
 ## Roadmap
 * Release 1.0.0
