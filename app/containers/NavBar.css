@@ -1,13 +1,19 @@
-li a {
+.navbarWrapper{
+
+}
+
+.navbarWrapper li a {
     display: block;
     color: black;
+    padding-top: 25px;
+    padding-left: 10px;
     text-decoration: none;
 }
-li{
+.navbarWrapper li{
   float: left;
 }
 
-.navbar{
+.navbarWrapper .navbar{
   height: 8%;
   width: 100%;
   border-bottom: 1px;
@@ -17,7 +23,7 @@ li{
   background-color: #FFFFFF;
 }
 
-ul {
+.navbarWrapper ul {
     list-style-type: none;
     margin: 0;
     padding: 0;

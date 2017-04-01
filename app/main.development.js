@@ -45,7 +45,6 @@ app.on('ready', async () => {
   await installExtensions();
 
   mainWindow = new BrowserWindow({
-    titleBarStyle: 'hidden',
     show: false,
     width: 1024,
     height: 728

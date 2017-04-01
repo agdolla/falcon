@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styles from './NavBar.css';
 
 type AppState = {
-
+  sections: Array<string>
 };
 
 export default class NavBar extends Component {
@@ -22,10 +22,12 @@ export default class NavBar extends Component {
       <li key={section}><a href="#">{section}</a></li>);
 
     return (
-      <div className={styles.navbar}>
-        <ul>
-          {links}
-        </ul>
+      <div className={styles.navbarWrapper}>
+        <div className={styles.navbar}>
+          <ul>
+            {links}
+          </ul>
+        </div>
       </div>
     );
   }

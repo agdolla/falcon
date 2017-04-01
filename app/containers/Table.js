@@ -3,50 +3,23 @@ import React, { Component } from 'react';
 import TableRow from '../components/TableRow';
 import './Table.css';
 
-type AppState = {
-    headerData: Array<string>,
-    tableData: Array<Object>
-};
 
 export default class Table extends Component {
-
-  state: AppState;
-
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      headerData: ['Name', 'Company', 'Location'],
-      tableData: [{
-        name: 'Alex',
-        company: 'Joogle',
-        location: 'NY'
-      },
-      {
-        name: 'David',
-        company: 'Joogle',
-        location: 'CA'
-      },
-      {
-        name: 'Tom',
-        company: 'Appel',
-        location: 'TX'
-      }],
-    };
-  }
 
   render() {
    /* For each object in the tableData array,
   create an array of values which is passed to TableRow */
-    const tableRows = this.state.tableData.map((object) => {
-      const values = Object.values(object);
-      return (<TableRow key={object.name} entries={values} />);
+    if (!this.props.table) return <div />;
+    const tableRows = this.props.table.rows.map((object) => {
+      console.log(object.value);
+      return (<TableRow key={object.columnName} entries={object.value} />);
     });
 
     return (
       <div data-tid="container">
         <table>
           <thead>
-            <TableRow entries={this.state.headerData} />
+            <TableRow entries={this.props.table.columns} />
           </thead>
           <tbody>
             {tableRows}
