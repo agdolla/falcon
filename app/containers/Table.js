@@ -1,28 +1,25 @@
 // @flow
 import React, { Component } from 'react';
 import TableRow from '../components/TableRow';
-import type { TableType } from '../types/tableType';
-import styles from './Table.css';
+import './Table.css';
 
 
 export default class Table extends Component {
-  props: {
-    table: ?TableType
-  };
+
   render() {
-    if (!this.props.table) return <span className={styles.placeholder}> Select a table</span>;
-
-    const tableRows = this.props.table.rows.map((object) =>
-    (<TableRow key={object.columnName} rowEntries={object.value} />));
-
+   /* For each object in the tableData array,
+  create an array of values which is passed to TableRow */
+    if (!this.props.table) return <div />;
+    const tableRows = this.props.table.rows.map((object) => {
+      console.log(object.value);
+      return (<TableRow key={object.columnName} entries={object.value} />);
+    });
 
     return (
       <div data-tid="container">
         <table>
           <thead>
-            {/* $FlowFixMe: Shouldn't worry about null since we would have
-            returned a temporary value. Refactor to fix flow error */}
-            <TableRow rowEntries={this.props.table.columns} />
+            <TableRow entries={this.props.table.columns} />
           </thead>
           <tbody>
             {tableRows}

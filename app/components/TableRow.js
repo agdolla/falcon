@@ -1,7 +1,8 @@
 import React from 'react';
 
-const TableRow = ({ rowEntries }: Object<Array<string>>) => {
-  const rows = rowEntries.map((value) => <td key={value}>{value}</td>);
+// Creates a tableRow containing all data passed to it
+const TableRow = (props) => {
+  const rows = props.entries.map((value) => <td key={value}>{value}</td>);
   return (
     <tr>
       {rows}
