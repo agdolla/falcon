@@ -2,13 +2,12 @@
 import React, { Component } from 'react';
 import styles from './NavBar.css';
 
-type AppState = {
-  sections: Array<string>
-};
 
 export default class NavBar extends Component {
 
-  state: AppState;
+  state: {
+    sections: Array<string>
+  };
 
   constructor(props: {}) {
     super(props);

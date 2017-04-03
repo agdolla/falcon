@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import routes from '../routes';
 
+
 type RootType = {
   store: {},
   history: {}

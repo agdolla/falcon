@@ -1,6 +1,10 @@
 .container {
-  padding: 10em 0;
-  margin: auto;
-  width: 50%;
+  top: 11%;
+  left: 15%;
+  height: 92%;
+  width: 85%;
+  position: fixed!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-

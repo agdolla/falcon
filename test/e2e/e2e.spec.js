@@ -49,14 +49,15 @@ describe('main window', function spec() {
     expect(logs).toHaveLength(0);
   });
 
-  it('should to Counter with click "to Counter" link', async () => {
+  // Everything below here is skipped but will be used for later reference
+  it.skip('should to Counter with click "to Counter" link', async () => {
     const { client } = this.app;
 
     await client.click('[data-tid=container] > a');
     expect(await findCounter().getText()).toBe('0');
   });
 
-  it('should display updated count after increment button click', async () => {
+  it.skip('should display updated count after increment button click', async () => {
     const { client } = this.app;
 
     const buttons = await findButtons();
@@ -64,7 +65,7 @@ describe('main window', function spec() {
     expect(await findCounter().getText()).toBe('1');
   });
 
-  it('should display updated count after descrement button click', async () => {
+  it.skip('should display updated count after descrement button click', async () => {
     const { client } = this.app;
 
     const buttons = await findButtons();
@@ -72,7 +73,7 @@ describe('main window', function spec() {
     expect(await findCounter().getText()).toBe('0');
   });
 
-  it('shouldnt change if even and if odd button clicked', async () => {
+  it.skip('shouldnt change if even and if odd button clicked', async () => {
     const { client } = this.app;
 
     const buttons = await findButtons();
@@ -80,7 +81,7 @@ describe('main window', function spec() {
     expect(await findCounter().getText()).toBe('0');
   });
 
-  it('should change if odd and if odd button clicked', async () => {
+  it.skip('should change if odd and if odd button clicked', async () => {
     const { client } = this.app;
 
     const buttons = await findButtons();
@@ -89,7 +90,7 @@ describe('main window', function spec() {
     expect(await findCounter().getText()).toBe('2');
   });
 
-  it('should change if async button clicked and a second later', async () => {
+  it.skip('should change if async button clicked and a second later', async () => {
     const { client } = this.app;
 
     const buttons = await findButtons();
@@ -99,7 +100,7 @@ describe('main window', function spec() {
     expect(await findCounter().getText()).toBe('3');
   });
 
-  it('should back to home if back button clicked', async () => {
+  it.skip('should back to home if back button clicked', async () => {
     const { client } = this.app;
     await client.element(
       '[data-tid="backButton"] > a'
