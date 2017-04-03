@@ -1,13 +1,16 @@
 // @flow
 import React, { Component } from 'react';
 import SideBarItem from './SideBarItem';
+import type { DatabaseType } from '../types/databaseType';
+import type { TableType } from '../types/tableType';
 import styles from './SideBar.css';
 
-
 export default class SideBar extends Component {
+  props: {
+    onTableSelect: (selectedTable: ?TableType) => void,
+    databases: Array<DatabaseType>
+  };
 
-  // Refactor so that {tables} passed into SideBarItem contains only
-  // names, not actual table object
   render() {
     const databases = this.props.databases.map((database) => (
       <SideBarItem
@@ -18,12 +21,10 @@ export default class SideBar extends Component {
       />));
 
     return (
-      <div className={styles.sidebarWrapper}>
-        <div className={styles.sidebar}>
-          <ul>
-            {databases}
-          </ul>
-        </div>
+      <div className={styles.sidebar}>
+        <ul>
+          {databases}
+        </ul>
       </div>
     );
   }

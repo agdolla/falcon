@@ -3,18 +3,15 @@ import React, { Component } from 'react';
 import Table from '../containers/Table';
 import SideBar from '../containers/SideBar';
 import NavBar from '../containers/NavBar';
+import Tab from '../components/Tab';
+import type { TableType } from '../types/tableType';
+import type { DatabaseType } from '../types/databaseType';
 import styles from './Home.css';
 
 export default class HomePage extends Component {
-
   state: {
-    selectedTable: ?string,
-    databases: Array<{
-      databaseName: string,
-      tables: Array<{
-        columns: Array<string>
-      }>
-    }>
+    selectedTable: ?TableType,
+    databases: Array<DatabaseType>
   };
 
   constructor(props: {}) {
@@ -26,6 +23,9 @@ export default class HomePage extends Component {
           databaseName: 'databaseFoo',
           tables: [
             {
+
+              databaseName: 'databaseFoo',
+
               tableName: 'tableFoo',
               columns: [
                 'col1', 'col2', 'col3'
@@ -51,6 +51,7 @@ export default class HomePage extends Component {
           databaseName: 'databaseBar',
           tables: [
             {
+              databaseName: 'databaseBar',
               tableName: 'tableBar',
               columns: [
                 'col1', 'col2', 'col3'
@@ -82,8 +83,10 @@ export default class HomePage extends Component {
         <NavBar />
         <SideBar
           databases={this.state.databases}
-          onTableSelect={selectedTable => this.setState({ selectedTable })}
+          onTableSelect={(selectedTable) => this.setState({ selectedTable })}
         />
+        <Tab table={this.state.selectedTable} />
+
         <div className={styles.container} data-tid="container">
           <Table table={this.state.selectedTable} />
         </div>
