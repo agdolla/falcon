@@ -4,7 +4,6 @@
 .*/app/dist/.*
 .*/release/.*
 .*/git/.*
-.*/node_modules/.*
 
 [include]
 

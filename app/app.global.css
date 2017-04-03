@@ -3,7 +3,7 @@
 body {
   position: relative;
   margin: 0;
-  color: black;
+  color: white;
   height: 100vh;
   background-color: #f2f2f2;
   font-family: Arial, Helvetica, Helvetica Neue, serif;
@@ -15,7 +15,7 @@ h2 {
   font-size: 2.25rem;
   font-weight: bold;
   letter-spacing: -.025em;
-  color: #black;
+  color: #fff;
 }
 
 p {
@@ -38,7 +38,7 @@ li a:hover {
 }
 
 a {
-  color: black;
+  color: white;
   opacity: .75;
   text-decoration: none;
 }
