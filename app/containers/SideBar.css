@@ -25,6 +25,10 @@
   color: black;
 }
 
+.sidebar i{
+  margin: 3px;
+}
+
 .sidebar .sidebarItem {
   width: 100%;
   color: black;

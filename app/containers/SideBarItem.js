@@ -24,16 +24,23 @@ export default class SideBarItem extends Component {
     };
   }
 
-  onDatabaseClick = () => {
+  onDatabaseClick = (e: SyntheticEvent) => {
+    e.preventDefault();
     this.setState({ tablesVisible: !this.state.tablesVisible });
   }
 
+  onTableClick = (e: SyntheticEvent, table: TableType) => {
+    console.log(table);
+    e.preventDefault();
+    this.props.onTableSelect(table);
+  }
+
   render() {
-    const tables = this.props.tables.map((table: {tableName: string}) =>
+    const tables = this.props.tables.map((table: TableType) =>
       <li key={table.tableName}>
         <a
           href="#"
-          onClick={() => this.props.onTableSelect(table)}
+          onClick={(e) => this.onTableClick(e, table)}
           className={styles.sidebarItem}
         >
           <i className="fa fa-table" aria-hidden="true" /> {table.tableName}

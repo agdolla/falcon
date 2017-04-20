@@ -25,9 +25,7 @@ export default class HomePage extends Component {
           databaseName: 'databaseFoo',
           tables: [
             {
-
               databaseName: 'databaseFoo',
-
               tableName: 'tableFoo',
               columns: [
                 'col1', 'col2', 'col3'
