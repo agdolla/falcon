@@ -20,7 +20,8 @@ export default class SideBar extends Component {
         name={database.databaseName}
         onTableSelect={this.props.onTableSelect}
         tables={database.tables}
-      />));
+      />
+    ));
 
     return (
       <div className={styles.sidebar}>

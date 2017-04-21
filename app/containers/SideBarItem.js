@@ -30,7 +30,6 @@ export default class SideBarItem extends Component {
   }
 
   onTableClick = (e: SyntheticEvent, table: TableType) => {
-    console.log(table);
     e.preventDefault();
     this.props.onTableSelect(table);
   }

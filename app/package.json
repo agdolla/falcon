@@ -10,6 +10,10 @@
     "url": "https://github.com/chentsulin"
   },
   "license": "MIT",
+  "scripts": {
+    "postinstall": "npm rebuild --runtime=electron --target=1.6.1 --disturl=https://atom.io/download/atom-shell --build-from-source"
+  },
   "dependencies": {
+    "falcon-core": "^0.0.1-0"
   }
 }
