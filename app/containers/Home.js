@@ -44,7 +44,6 @@ export default class HomePage extends Component {
     const { tables, tableKeys, tableValues, databases } = await this.getTableData();
 
     console.log(tables, tableKeys, tableValues, databases);
-
     return;
 
     this.setState({

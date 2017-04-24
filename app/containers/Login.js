@@ -25,7 +25,7 @@ export default class Login extends Component {
 
   handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    this.props.router.push('/home');
+    this.props.history.push('/home');
   }
 
   render() {
@@ -46,7 +46,7 @@ export default class Login extends Component {
             type="text" value={this.state.nickname} name="nickname" placeholder="Nickname"
             onChange={(e) => this.setState({ nickname: e.target.value })}
           />
-          <input type="submit" value="Submit" /><br />
+          <input type="submit" value="Submit" />
         </form>
       </div>
     );
