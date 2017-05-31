@@ -42,108 +42,51 @@ export default class HomePage extends Component {
 
   async setTableData() {
     const { tables, tableKeys, tableValues, databases } = await this.getTableData();
-
-    console.log(tables, tableKeys, tableValues, databases);
-    return;
-
-    this.setState({
-      selectedTable: null,
-      databases: [
-        {
-          databaseName: 'databaseFoo',
-          tables: [
-            {
-              databaseName: 'databaseFoo',
-              tableName: 'tableFoo',
-              columns: [
-                'col1', 'col2', 'col3'
-              ],
-              rows: [
-                {
-                  columnName: 'col1',
-                  value: [2, 5, 9]
-                },
-                {
-                  columnName: 'col2',
-                  value: [8, 1, 12]
-                },
-                {
-                  columnName: 'col3',
-                  value: [8, 0, 30]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    });
+    console.log('tables, tableKeys, tableValues, databases');
+    console.log(tables);
+    console.log(tableKeys);
+    console.log(tableValues);
+    console.log(databases);
   }
 
   constructor(props: Object = {}) {
     super(props);
 
-    this.setTableData();
-
     this.state = {
-      selectedTable: null,
-      databases: [
-        {
-          databaseName: 'databaseFoo',
-          tables: [
-            {
-              databaseName: 'databaseFoo',
-              tableName: 'tableFoo',
-              columns: [
-                'col1', 'col2', 'col3'
-              ],
-              rows: [
-                {
-                  columnName: 'col1',
-                  value: [2, 5, 9]
-                },
-                {
-                  columnName: 'col2',
-                  value: [8, 1, 12]
-                },
-                {
-                  columnName: 'col3',
-                  value: [8, 0, 30]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          databaseName: 'databaseBar',
-          tables: [
-            {
-              databaseName: 'databaseBar',
-              tableName: 'tableBar',
-              columns: [
-                'col1', 'col2', 'col3'
-              ],
-              rows: [
-                {
-                  columnName: 'col1',
-                  value: [39, 12, 4]
-                },
-                {
-                  columnName: 'col2',
-                  value: [2, 1, 4]
-                },
-                {
-                  columnName: 'col3',
-                  value: [5, 15, 72]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      databases: []
     };
+
+    const promise = this.getTableData();
+    // Not sure how to handle table contents since only given table names
+    // of one database
+    promise.then(result => {
+      const { tables, tableKeys, tableValues, databases } = result;
+
+      const tableObjs = tables.map(table => ({
+        databaseName: 'sqlelectron',
+        tableName: table.name,
+        columns: [],
+        rows: []
+      }));
+
+      this.setState({
+        databases: [
+          {
+            databaseName: 'sqlelectron',
+            tables: tableObjs
+          }
+        ]
+      });
+    })
+      .catch(reason => {
+        console.log(reason);
+      });
   }
 
   render() {
+    if (!this.state.databases) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <NavBar />

@@ -12,7 +12,7 @@ export default class Table extends Component {
   };
 
   render() {
-    if (!this.props.table) return <span className={styles.placeholder}> Select a table</span>;
+    if (!this.props.table) return <span className={styles.placeholder}>Select a table</span>;
 
     const tableRows = this.props.table.rows.map((object) =>
     (<TableRow key={object.columnName} rowEntries={object.value} />));
